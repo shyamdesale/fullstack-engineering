@@ -15,3 +15,7 @@ let msg = `Hello ${name}`;
 let text = `line1
 line2
 line3`;
+
+console.log (s1 , s2 , s3);
+console.log (name , msg);
+console.log (text);
