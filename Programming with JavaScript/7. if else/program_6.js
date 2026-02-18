@@ -7,6 +7,7 @@ if (username === "admin") {
     } else {
         console.log("Wrong password");
     }
+    
 } else {
     console.log("User not found");
 }
