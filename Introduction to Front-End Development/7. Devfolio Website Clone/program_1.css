@@ -557,6 +557,7 @@ nav a {
 }
 
 /* SLIDES */
+
 .slide {
     width: 850px;
     flex-shrink: 0;
@@ -575,6 +576,7 @@ nav a {
 }
 
 /* TOP */
+
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -604,6 +606,7 @@ nav a {
 }
 
 /* LINKS */
+
 .footer-links {
   display: flex;
   gap: 90px;
