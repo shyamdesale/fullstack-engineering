@@ -2,7 +2,6 @@ const track = document.querySelector('.track');
 const slides = document.querySelectorAll('.slide');
 
 let index = 1;
-
 const gap = 60;
 
 function update() {
