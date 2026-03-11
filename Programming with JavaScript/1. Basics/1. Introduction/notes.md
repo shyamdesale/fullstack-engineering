@@ -41,7 +41,6 @@ Most commonly used inside web browsers like:
 - Safari
 
 Example:
-
 ```html
 <script>
 console.log("Hello JavaScript");
