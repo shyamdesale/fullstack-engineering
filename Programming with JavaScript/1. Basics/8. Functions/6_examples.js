@@ -108,6 +108,7 @@ function withdraw(balance,amount){
 
 console.log(withdraw(5000,2000));
 
+
 /*
 Output
 3000
