@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional onboarding modal system">
+    <meta name="theme-color" content="#0f172a">
+    <title>Onboarding — Get Started</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="background-gradient"></div>
+    <div class="background-blur"></div>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal" id="onboardingModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+            <!-- Close button -->
+            <button 
+                class="modal-close" 
+                id="closeBtn" 
+                aria-label="Close onboarding"
+                type="button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Progress indicator -->
+            <div class="progress-section" aria-live="polite" aria-atomic="true">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 25%"></div>
+                </div>
+                <div class="step-counter">
+                    <span id="currentStep">1</span> / <span id="totalSteps">4</span>
+                </div>
+            </div>
+
+            <!-- Form wrapper -->
+            <form class="modal-form" id="onboardingForm" novalidate>
+                <!-- Step 1: Email -->
+                <div class="step" id="step1" data-step="1" aria-labelledby="step1-title">
+                    <h2 id="step1-title" class="step-title">Welcome to our platform</h2>
+                    <p class="step-description">Join thousands of companies growing their business with us</p>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="you@company.com"
+                            required
+                            aria-required="true"
+                            aria-describedby="email-error">
+                        <span class="form-error" id="email-error" role="alert"></span>
+                        <span class="form-hint">We'll send a confirmation link to this email</span>
+                    </div>
+
+                    <label class="checkbox-group">
+                        <input 
+                            type="checkbox" 
+                            id="terms" 
+                            name="terms" 
+                            required
+                            aria-required="true">
+                        <span class="checkbox-label">I agree to the terms of service and privacy policy</span>
+                    </label>
+                </div>
+
+                <!-- Step 2: Account Details -->
+                <div class="step" id="step2" data-step="2" aria-labelledby="step2-title" hidden>
+                    <h2 id="step2-title" class="step-title">Create your account</h2>
+                    <p class="step-description">Set up your login credentials</p>
+                    
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Full name</label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            placeholder="Jane Doe"
+                            required
+                            aria-required="true"
+                            aria-describedby="fullName-error">
+                        <span class="form-error" id="fullName-error" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="••••••••"
+                                required
+                                aria-required="true"
+                                aria-describedby="password-error password-strength">
+                            <button 
+                                class="password-toggle" 
+                                type="button" 
+                                id="passwordToggle"
+                                aria-label="Show password">
+                                <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="form-error" id="password-error" role="alert"></span>
+                        <div class="password-strength" id="password-strength">
+                            <div class="strength-indicator"></div>
+                            <span class="strength-text">Password strength</span>
+                        </div>
+                        <span class="form-hint">At least 8 characters, mix of uppercase, lowercase, and numbers</span>
+                    </div>
+                </div>
+
+                <!-- Step 3: Company Info -->
+                <div class="step" id="step3" data-step="3" aria-labelledby="step3-title" hidden>
+                    <h2 id="step3-title" class="step-title">Tell us about your company</h2>
+                    <p class="step-description">Help us customize your experience</p>
+                    
+                    <div class="form-group">
+                        <label for="companyName" class="form-label">Company name</label>
+                        <input 
+                            type="text" 
+                            id="companyName" 
+                            name="companyName" 
+                            placeholder="Your company"
+                            required
+                            aria-required="true"
+                            aria-describedby="companyName-error">
+                        <span class="form-error" id="companyName-error" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role" class="form-label">Your role</label>
+                        <select 
+                            id="role" 
+                            name="role" 
+                            required
+                            aria-required="true"
+                            aria-describedby="role-error">
+                            <option value="">Select your role</option>
+                            <option value="founder">Founder / CEO</option>
+                            <option value="manager">Manager</option>
+                            <option value="developer">Developer</option>
+                            <option value="designer">Designer</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="form-error" id="role-error" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="companySize" class="form-label">Company size</label>
+                        <select 
+                            id="companySize" 
+                            name="companySize" 
+                            required
+                            aria-required="true"
+                            aria-describedby="companySize-error">
+                            <option value="">Select company size</option>
+                            <option value="1-10">1-10 people</option>
+                            <option value="11-50">11-50 people</option>
+                            <option value="51-200">51-200 people</option>
+                            <option value="200+">200+ people</option>
+                        </select>
+                        <span class="form-error" id="companySize-error" role="alert"></span>
+                    </div>
+                </div>
+
+                <!-- Step 4: Review -->
+                <div class="step" id="step4" data-step="4" aria-labelledby="step4-title" hidden>
+                    <h2 id="step4-title" class="step-title">Review your information</h2>
+                    <p class="step-description">Make sure everything looks correct</p>
+                    
+                    <div class="review-section">
+                        <div class="review-item">
+                            <span class="review-label">Email</span>
+                            <span class="review-value" id="review-email">—</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Full name</span>
+                            <span class="review-value" id="review-fullName">—</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Company</span>
+                            <span class="review-value" id="review-companyName">—</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Role</span>
+                            <span class="review-value" id="review-role">—</span>
+                        </div>
+                        <div class="review-item">
+                            <span class="review-label">Company size</span>
+                            <span class="review-value" id="review-companySize">—</span>
+                        </div>
+                    </div>
+
+                    <button 
+                        type="button" 
+                        class="link-button" 
+                        id="editBtn"
+                        aria-label="Go back to edit information">
+                        ← Edit information
+                    </button>
+                </div>
+
+                <!-- Success State -->
+                <div class="step success-state" id="successState" aria-labelledby="success-title" hidden>
+                    <div class="success-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h2 id="success-title" class="step-title">Welcome aboard!</h2>
+                    <p class="step-description">Your account has been created successfully. Get ready to transform your workflow.</p>
+                    <p class="success-subtitle">Redirecting to dashboard...</p>
+                </div>
+            </form>
+
+            <!-- Navigation buttons -->
+            <div class="modal-footer">
+                <button 
+                    type="button" 
+                    class="btn btn-secondary" 
+                    id="backBtn"
+                    aria-label="Go to previous step">
+                    ← Back
+                </button>
+                <button 
+                    type="button" 
+                    class="btn btn-primary" 
+                    id="nextBtn"
+                    aria-label="Continue to next step">
+                    Continue →
+                </button>
+                <button 
+                    type="submit" 
+                    class="btn btn-primary btn-submit" 
+                    id="submitBtn"
+                    style="display: none;"
+                    aria-label="Submit and create account">
+                    <span class="btn-text">Create account</span>
+                    <span class="btn-loader" style="display: none;">
+                        <svg class="spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
