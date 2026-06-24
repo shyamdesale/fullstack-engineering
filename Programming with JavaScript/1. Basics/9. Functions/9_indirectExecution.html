@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indirect Execution DOM</title>
+</head>
+<body>
+
+<h1 id="heading">
+    Indirect Execution
+</h1>
+
+<button id="welcomeBtn">
+    Welcome
+</button>
+
+<button id="changeBtn">
+    Change Heading
+</button>
+
+<script>
+
+// ===================================
+// Event Listener
+// ===================================
+
+function showWelcome() {
+
+    console.log(
+        "Welcome User"
+    );
+}
+
+document
+.getElementById("welcomeBtn")
+.addEventListener(
+    "click",
+    showWelcome
+);
+
+
+// ===================================
+// DOM Manipulation
+// ===================================
+
+function updateHeading() {
+
+    document
+    .getElementById("heading")
+    .textContent =
+    "DOM Updated Successfully";
+}
+
+document
+.getElementById("changeBtn")
+.addEventListener(
+    "click",
+    updateHeading
+);
+
+</script>
+
+</body>
+</html>
