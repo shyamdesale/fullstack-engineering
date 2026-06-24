@@ -9,3 +9,17 @@ if (canVote) {
 } else {
   console.log("Too young");
 }
+
+
+
+
+
+let age1 = 45;
+let isEligible = age1 >= 18;
+
+if(isEligible){
+  console.log("Voter Are Eligible");
+}
+else{
+  console.log("Voter are Not Eligible");
+}

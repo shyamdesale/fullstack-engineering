@@ -11,4 +11,4 @@ const even = nums.filter(n => n % 2 === 0);
 // reduce
 const sum = nums.reduce((a,b) => a + b, 0);
 
-console.log(doubled, even, sum);
+console.log(nums, doubled, even, sum);

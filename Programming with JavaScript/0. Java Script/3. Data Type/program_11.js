@@ -5,3 +5,5 @@ const arr2 = [...arr1, 3,4];
 
 const obj1 = {a:1};
 const obj2 = {...obj1, b:2};
+
+console.log(arr1 , arr2 , obj1 , obj2);
