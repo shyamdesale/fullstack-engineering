@@ -79,3 +79,12 @@ if(str[0] === "a" && str.length > 3){
 else{
     console.log("Not a Good String");
 }
+
+const str = "Apple";
+
+if (str.toLowerCase().startsWith("a") && str.length > 3) {
+    console.log("Good String");
+}
+else {
+    console.log("Not a Good String");
+}
