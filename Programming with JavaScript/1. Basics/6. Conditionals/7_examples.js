@@ -67,3 +67,15 @@ else if(marks >= 60){
 else{
     console.log("Fail");
 }
+
+
+
+// Example 6: a good string that starts with "a" & has a length more than 3. write a program and find if a string is a good string or not.
+let str = "apple";
+
+if(str[0] === "a" && str.length > 3){
+    console.log("Good String");
+}
+else{
+    console.log("Not a Good String");
+}
