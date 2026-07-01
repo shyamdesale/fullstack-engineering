@@ -31,6 +31,11 @@ f = f.slice(num1, num2);
 console.log(f);
 
 
+let g = "Hello, World!";
+g = g.slice(7, g.length);
+console.log(g);
+
+
 // =====================================================
 // 1. Extract First Name
 // =====================================================
