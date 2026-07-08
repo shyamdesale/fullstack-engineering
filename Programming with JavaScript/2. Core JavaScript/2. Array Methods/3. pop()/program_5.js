@@ -14,6 +14,13 @@ console.log("Processed Order:", processedOrder);
 console.log("Remaining Orders:", orders);
 
 
+// Output:
+// Pending Orders: [
+//   { id: 101, customer: 'Shyam', amount: 2500 },
+//   { id: 102, customer: 'Rahul', amount: 1800 },
+//   { id: 103, customer: 'Amit', amount: 3200 }
+// ]
+
 // Processed Order:
 // { id: 103, customer: 'Amit', amount: 3200 }
 
